@@ -1,0 +1,12 @@
+streamlit
+crewai
+pandas
+langchain
+langchain-openai
+langchain-google-genai
+langchain-groq
+langchain-ollama
+langchain-community
+ollama
+requests
+huggingface-hub
