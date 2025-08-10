@@ -13,7 +13,7 @@ A smart, cross-platform AI agent that schedules meetings, manages tasks, and ans
 - LLM-agnostic: OpenAI, Groq, Gemini, or local Ollama
 
 ## Demo Screenshots
-
+![img1](https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent/blob/main/WhatsApp%20Image%202025-05-06%20at%2014.57.04_7e67010d.jpg)
 
 Example embeds:
 
