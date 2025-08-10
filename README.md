@@ -16,7 +16,6 @@ A smart, cross-platform AI agent that schedules meetings, manages tasks, and ans
 
 
 Example embeds:
-- ![App Home[Scheduling Flow](images/schedule-flow.png](images/telegram-chat.png Event](images/calendar-event.png Does
 
 - Schedule meetings:
   - “Schedule a Google Meet with the design team tomorrow at 3pm IST. Agenda: UI review.”
