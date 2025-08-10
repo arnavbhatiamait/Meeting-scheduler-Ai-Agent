@@ -14,7 +14,12 @@ A smart, cross-platform AI agent that schedules meetings, manages tasks, and ans
 
 ## Demo Screenshots
 ![img1](https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent/blob/main/WhatsApp%20Image%202025-05-06%20at%2014.57.04_7e67010d.jpg)
-
+![img2](https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent/blob/main/WhatsApp%20Image%202025-05-06%20at%2014.57.07_1be6ecec.jpg)
+![img3](https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent/blob/main/WhatsApp%20Image%202025-05-06%20at%2014.57.17_40b8738a.jpg)
+![img4](https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent/blob/main/WhatsApp%20Image%202025-05-06%20at%2014.57.46_7860bdce.jpg)
+![img5](https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent/blob/main/WhatsApp%20Image%202025-05-06%20at%2014.57.46_f8caa869.jpg)
+![img6](https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent/blob/main/WhatsApp%20Image%202025-05-06%20at%2014.57.47_2a6069f0.jpg)
+![img7](https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent/blob/main/WhatsApp%20Image%202025-05-06%20at%2014.58.10_63527c1c.jpg)
 Example embeds:
 
 - Schedule meetings:
