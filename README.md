@@ -1,104 +1,154 @@
-Meeting Scheduler AI Agent
-GitHub Repository
-Email
-Linkedin
-Github
-What It Does:
-A smart, cross-platform AI agent that:
-Schedules meetings (including Google Meet)
+# Meeting Scheduler AI Agent
+
+A smart, cross-platform AI agent that schedules meetings, manages tasks, and answers questions from meeting transcripts using natural language via chat or voice. Works through a Telegram bot today, with WhatsApp support in progress.
+
+- Repository: arnavbhatiamait/Meeting-scheduler-Ai-Agent
+
+## Highlights
+
+- Schedules Google Meet meetings and returns join links from natural requests
+- Adds and manages tasks via Todoist
+- Memory-based Q&A over meeting transcripts: ask what was discussed or decided
+- Accepts voice or text input; live interaction through Telegram
+- LLM-agnostic: OpenAI, Groq, Gemini, or local Ollama
+
+## Demo Screenshots
 
 
-Adds and manages tasks via Todoist
+Example embeds:
+- ![App Home[Scheduling Flow](images/schedule-flow.png](images/telegram-chat.png Event](images/calendar-event.png Does
 
+- Schedule meetings:
+  - “Schedule a Google Meet with the design team tomorrow at 3pm IST. Agenda: UI review.”
+- Manage tasks:
+  - “Add Todoist task: Send follow-up notes to team, due Friday.”
+- Meeting intelligence:
+  - “What did we decide in yesterday’s sprint planning?”
+  - “Summarize action items from the last two meetings.”
+- Voice input:
+  - Use speech recognition to issue commands hands-free.
+- Chat agents:
+  - Telegram bot for real-time interaction (WhatsApp in development).
 
-Answers questions based on meeting transcripts
+## Key Features
 
+- LLM choice: OpenAI, Groq, Gemini, Ollama
+- Google Meet integration: Create events, fetch links/metadata via Google Calendar API
+- Transcript analysis: Parse and summarize meeting transcripts; extract decisions and action items
+- Memory-based Q&A: Natural-language questions over past meetings
+- Todoist API: Create and organize tasks/projects
+- Telegram Bot: Production-ready chat interface
+- Voice support: Speech recognition for commands
 
-Accepts natural voice or text input
+## Tech Stack
 
+- Python, Streamlit — app logic and UI
+- LLMs — OpenAI, Groq, Gemini, Ollama
+- Google Calendar API — schedules meetings, fetches Meet links
+- Todoist API — task management
+- Transcript Parser — summarization and Q&A grounding
+- Telegram Bot API — chat interface
+- Speech Recognition — voice input
 
-Works through Telegram, with WhatsApp support in progress
+## Project Structure
 
+- app.py — Streamlit entry point and UI
+- all_classses.py — agent logic, tools, and service wrappers (LLMs, Google, Todoist, Telegram, transcripts, speech)
+- project_all_classes.ipynb — notebook for development/experiments
+- requirements.txt — Python dependencies
+- images/ — screenshots for README (add PNG/JPG files here)
+- data/ or samples/ — example transcript files (optional)
 
+## Getting Started
 
-Key Features:
- LLM-agnostic: Choose between OpenAI, Groq, Gemini, or Ollama
+1) Clone and set up environment
+- git clone https://github.com/arnavbhatiamait/Meeting-scheduler-Ai-Agent.git
+- cd Meeting-scheduler-Ai-Agent
+- python -m venv .venv
+- source .venv/bin/activate  (Windows: .venv\Scripts\activate)
+- pip install -r requirements.txt
 
+2) Environment variables (.env)
+- MODEL_PROVIDER=openai|groq|gemini|ollama
+- MODEL_NAME=gpt-4o|llama3|gemini-1.5|...
+- OPENAI_API_KEY=...
+- GROQ_API_KEY=...
+- GEMINI_API_KEY=...
+- OLLAMA_BASE_URL=http://localhost:11434
+- TODOIST_API_TOKEN=...
+- TELEGRAM_BOT_TOKEN=...
+- GOOGLE_API_CREDENTIALS=/absolute/path/to/client_secret.json
 
-Google Meet Integration: Automatically schedule and fetch meeting links
+3) Google OAuth (Calendar/Meet)
+- Create a Google Cloud project; enable Google Calendar API
+- Create OAuth 2.0 credentials; download client_secret.json
+- Set GOOGLE_API_CREDENTIALS to the file path (or securely load the JSON)
+- On first run, complete OAuth consent to store tokens locally
 
+4) Todoist setup
+- Create a Todoist API token; set TODOIST_API_TOKEN
 
-Transcript Analysis: Reads and reasons over Google Meet transcripts to extract insights
+5) Telegram bot
+- Create a bot via @BotFather; set TELEGRAM_BOT_TOKEN
+- Use webhook or long polling during development
 
+6) Run
+- streamlit run app.py
+- Follow prompts; complete Google OAuth when requested
 
-Memory-based Q&A: Ask what was discussed or decided in previous meetings
+## Usage Examples
 
+- Schedule a meeting:
+  - “Set a Google Meet with Priya and Arjun on Wednesday 2–3pm, agenda: roadmap sync.”
+- Task management:
+  - “Add a Todoist task ‘Prepare slides for demo’, due tomorrow.”
+- Transcript Q&A:
+  - “What were the action items from last sprint review?”
+  - “Who owns API documentation updates?”
+- Voice:
+  - Use the mic button (if available) to speak the command.
 
-Todoist API: Manage to-dos and project tasks seamlessly
+## How It Works
 
+- Intent parsing: An LLM classifies user intent (schedule, tasks, Q&A)
+- Tool use:
+  - Google Calendar API creates events and fetches Meet links
+  - Todoist API manages tasks and projects
+  - Transcript pipeline summarizes meetings and powers follow-up Q&A
+- Memory:
+  - Structured summaries and metadata enable conversational queries over past meetings
+- Multimodal:
+  - Text or voice input; responses grounded in transcripts when applicable
 
-Voice-enabled: Talk to it using speech recognition
+## Security & Privacy
 
+- Store OAuth tokens and API keys securely; never commit .env
+- Review data retention for transcripts and logs in production
+- Follow least-privilege principles for OAuth scopes
 
-Telegram Bot: Live, chat-based interaction
+## Roadmap
 
+- WhatsApp integration
+- Multi-calendar support and attendee availability checks
+- Auto-generated minutes, agenda, and follow-up emails
+- Vector memory for long-term transcript grounding
+- Multi-user access control and roles
+- Docker and one-click deploy
 
-WhatsApp Integration: In development
+## Troubleshooting
 
+- Google OAuth errors:
+  - Verify credentials, scopes, and redirect URIs; re-run consent flow
+- Telegram bot not responding:
+  - Check token, webhook URL, and network/firewall
+- LLM provider errors:
+  - Validate MODEL_PROVIDER/MODEL_NAME and API keys
+- Todoist issues:
+  - Confirm token and project IDs; inspect API response logs
+- Voice input:
+  - Check microphone permissions and browser compatibility
 
+## Contributing
 
-Tech Stack:
-Python, Streamlit – app logic and UI
-
-
-LLMs (OpenAI, Ollama, Groq, Gemini) – NLP and planning
-
-
-Todoist API – task and meeting organization
-
-
-Google Meet API – schedule meetings, fetch metadata
-
-
-Transcript Parser – for summarizing and answering follow-up questions
-
-
-Telegram Bot API – real-time interaction
-
-
-Speech Recognition – for voice input
-
-
-
-Why It Stands Out:
-This project brings together agentic LLM capabilities, calendar/task automation, and cross-platform integration—bridging productivity with intelligence:
-Replaces a human assistant
-Summarizes what was said in a meeting and lets you query it later
-Can schedule meeting with the agenda of the meeting
-Ask question from the meeting
-Analyze what happens in the meeting
-Gives a question answer bassed llm bot to answer questions from the transcript
-Add different users
-Why It Stands Out:
-Telegram Bot Integration – from webhook setup to real-time communication
-
-
-Google Meet and Todoist APIs – handling OAuth, creating meetings, managing tasks
-
-
-Natural Language Understanding with LLMs – dynamic parsing of user intent
-
-
-Cross-platform Development – combining Streamlit, bots and Python APIs
-
-
-Agentic AI Thinking – building systems that reason, recall, and interact like human assistants
-
-Images - 
-
-
-
-
-Telgram -
-
+Contributions are welcome. Open an issue for feature requests or bug reports. Submit PRs with clear descriptions and testing notes.
 
